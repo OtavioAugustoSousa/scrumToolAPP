@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="app" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>SCRUMTool</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="/scrumtool/resources/js/libs/angular-ui/angular-ui.css"
+	rel="stylesheet" type="text/css" />
+<script src="/scrumtool/resources/js/libs/jquery-2.1.4.min.js"></script>
+<script src="/scrumtool/resources/js/libs/bootstrap.min.js"></script>
+<link
+	href="/scrumtool/resources/css/bootstrap-3.3.5-dist/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/scrumtool/resources/css/estoriaStyle.css" rel="stylesheet"
+	type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Oswald"
+	rel='stylesheet' type='text/css' />
+<script src="/scrumtool/resources/js/libs/angular.js/angular.min.js"></script>
+<script
+	src="/scrumtool/resources/js/DataManager/Repository/projetoRepository.js"></script>
+<script src="/scrumtool/resources/js/AppManager/scrumtool.js"></script>
+<script src="/scrumtool/resources/js/AppManager/projetoController.js"></script>
+<script src="/scrumtool/resources/js/DataManager/dataController.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto"
+	rel="stylesheet" type="text/css" />
+<link href="/scrumtool/resources/css/projetoStyle.css" rel="stylesheet"
+	type="text/css" />
+<script src="/scrumtool/resources/js/ComunicationControl/projetoComunicationService.js"></script>
+</head>
+<body ng-controller="projetoController as projetoController">
+	<ng-include src="'resources/partials/header.html'"></ng-include>
+	<div class="projetos container-fluid">
+	<button class="btn btn-default" ng-click="createProject()">Criar novo projeto</button>
+		<div class="panel panel-default"  ng-repeat="projeto in projetos">
+			<div class="projeto-card panel-body">
+				<h3>{{projeto.id}} - {{projeto.titulo}}</h3>
+				<dl>
+					<dt>Data inicio:</dt>
+					<dd>{{projeto.dataInicio}}</dd>
+					<dt>Data fim:</dt>
+					<dd>{{projeto.dataFim}}</dd>
+					<dt>Quantidade de horas:</dt>
+					<dd>{{projeto.quantidadeHoras}}</dd>
+					<dt>Cliente:</dt>
+					<dd>{{projeto.cliente}}</dd>
+					<dt>Responsável:</dt>
+					<dd>{{projeto.responsavel}}</dd>
+					<dt>Quantidade de Sprints:</dt>
+					<dd>{{projeto.quantidadeSprints}}</dd>
+					<dt>Tamanho Sprints:</dt>
+					<dd>{{projeto.tamanhoSprints}}</dd>
+					<dt>Equipe:</dt>
+				</dl>
+				<div class="table-responsive">
+					<table class="table-equipe table table-bordered">
+						<tr>
+							<td>Otávio Augusto de Sousa</td>
+						</tr>
+						<tr>
+							<td>Otávio Augusto de Sousa</td>
+						</tr>
+						<tr>
+							<td>Otávio Augusto de Sousa</td>
+						</tr>
+						<tr>
+							<td>Otávio Augusto de Sousa</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ng-include src="'/scrumtool/resources/partials/formCreateProject.html'"></ng-include>
+	<ng-include src="'/scrumtool/resources/partials/footer.html'"></ng-include>
+
+</body>
+</html>

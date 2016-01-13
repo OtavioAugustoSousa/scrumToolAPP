@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<!-- <html data-ng-app="app" manifest="manifest.appcache"> -->
+<head>
+<title>SCRUMTool</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="resources/js/libs/angular-ui/angular-ui.css"
+	rel="stylesheet" type="text/css" />
+<script src="resources/js/libs/jquery-2.1.4.min.js"></script>
+<script src="resources/js/libs/bootstrap.min.js"></script>
+<link href="resources/css/bootstrap-3.3.5-dist/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="resources/css/estoriaStyle.css" rel="stylesheet"
+	type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Oswald"
+	rel='stylesheet' type='text/css' />
+<script src="resources/js/libs/angular.js/angular.min.js"></script>
+<script
+	src="resources/js/DataManager/Repository/projetoRepository.js"></script>
+<script
+	src="resources/js/DataManager/Repository/backlogRepository.js"></script>
+<script src="resources/js/AppManager/scrumtool.js"></script>
+<script src="resources/js/AppManager/controller.js"></script>
+<script src="resources/js/DataManager/dataController.js"></script>
+<script src="resources/js/DataManager/backlogContoller.js"></script>
+<script src="resources/js/ComunicationControl/backlogComunicationService.js"></script>
+<script src="resources/js/DataManager/Repository/syncRepository.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto"
+	rel="stylesheet" type="text/css" />
+
+</head>
+<body data-ng-controller="backlogController">
+	<ng-include src="'resources/partials/header.html'"></ng-include>
+	<div class="content row ">
+		<div class="col-lg-12">
+
+			<!--Estoria BEGIN-->
+			<div class=" dropzone col-lg-4 " dropzone="move" id="todo-area"
+				ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<h3 class="text-center title todo">
+					TODO <span class="glyphicon glyphicon-plus"
+						data-ng-click="createItem('TODO')"></span>
+				</h3>
+
+				<div class="estoria todo" draggable="true" id="{{row.id}}"
+					ondragstart="angular.element(this).scope().drag(event)"
+					data-ng-repeat="row in list_Todo">
+					<div class="estoria-head">
+						<div class="item-menu">
+							<span class="glyphicon glyphicon glyphicon-edit" data-ng-click="updateItem(row)"></span> <span
+								class="glyphicon glyphicon-remove" data-ng-click="delete(row)"></span>
+						</div>
+						<p class="item-id">ID:{{row.id}}</p>
+						<h4 class="item-titulo">{{row.titulo}}</h4>
+					</div>
+					<div class="estoria-body">
+						<dl>
+							<dt>COMO:</dt>
+							<dd>{{row.como}}</dd>
+							<dt>QUERO:</dt>
+							<dd>{{row.quero}}</dd>
+							<dt>PARA:</dt>
+							<dd>{{row.para}}</dd>
+						</dl>
+						<p>Esforço: {{row.esforco}}</p>
+
+						<p>
+							Assing: <a>{{row.atribuir}}</a>
+						</p>
+					</div>
+				</div>
+				<!-- FIM -->
+
+			</div>
+			<div class="dropzone col-lg-4" id="doing-area"
+				ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<h3 class="text-center title doing">
+					DOING <span class="glyphicon glyphicon-plus"
+						ng-click="createItem('DOING')"></span>
+				</h3>
+				<!--Estoria BEGIN-->
+				<div class="estoria doing" draggable="true" id="{{row.id}}doing"
+					ondragstart="angular.element(this).scope().drag(event)"
+					ng-repeat="row in list_Doing">
+					<div class="estoria-head">
+						<div class="item-menu">
+							<span class="glyphicon glyphicon glyphicon-edit"  data-ng-click="updateItem(row)"></span> <span
+								class="glyphicon glyphicon-remove" data-ng-click="delete(row)"></span>
+						</div>
+						<p class="item-id">ID:{{row.id}}</p>
+						<h4 class="item-titulo">{{row.titulo}}</h4>
+					</div>
+					<div class="estoria-body">
+						<dl>
+							<dt>COMO:</dt>
+							<dd>{{row.como}}</dd>
+							<dt>QUERO:</dt>
+							<dd>{{row.quero}}</dd>
+							<dt>PARA:</dt>
+							<dd>{{row.para}}</dd>
+						</dl>
+						<p>Esforço: {{row.esforco}}</p>
+
+						<p>
+							Assing: <a>{{row.atribuir}}</a>
+						</p>
+					</div>
+				</div>
+				<!-- FIM -->
+			</div>
+			<div class=" dropzone col-lg-4" dropzone="move" id="done-area"
+				ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<!--Estoria BEGIN-->
+				<h3 class="text-center title done">
+					DONE <span class="glyphicon glyphicon-plus"
+						ng-click="createItem('DONE')"></span>
+				</h3>
+
+				<div class="estoria done" draggable="true" id="{{row.id}}done"
+					ondragstart="angular.element(this).scope().drag(event)"
+					ng-repeat="row in list_Done">
+					<div class="estoria-head">
+						<div class="item-menu">
+							<span class="glyphicon glyphicon glyphicon-edit"  data-ng-click="updateItem(row)"></span> <span
+								class="glyphicon glyphicon-remove" data-ng-click="delete(row)"></span>
+						</div>
+						<p class="item-id">ID:{{row.id}}</p>
+						<h4 class="item-titulo">{{row.titulo}}</h4>
+					</div>
+					<div class="estoria-body">
+						<dl>
+							<dt>COMO:</dt>
+							<dd>{{row.como}}</dd>
+							<dt>QUERO:</dt>
+							<dd>{{row.quero}}</dd>
+							<dt>PARA:</dt>
+							<dd>{{row.para}}</dd>
+						</dl>
+						<p>Esforço: {{row.esforco}}</p>
+
+						<p>
+							Assing: <a>{{row.atribuir}}</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+	<ng-include src="'resources/partials/formCreateItem.html'"></ng-include>
+	<ng-include src="'resources/partials/formUpdateItem.html'"></ng-include>
+	<ng-include src="'resources/partials/footer.html'"></ng-include>
+</body>
+</html>

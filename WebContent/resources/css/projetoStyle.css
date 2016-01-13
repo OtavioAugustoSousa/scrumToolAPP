@@ -1,0 +1,30 @@
+
+dl{
+    font-size: 10pt;
+    margin-bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+
+dt {
+    float: left;
+    clear: left;
+ 	width: 30%;
+    margin-bottom: 10px;
+}
+
+dd{
+    font-size: 10pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+
+}
+.table-equipe{
+	width: 50%;
+}
+
+.projeto-card{
+	padding-left: 20%;
+}

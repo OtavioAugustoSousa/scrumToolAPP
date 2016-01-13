@@ -1,0 +1,78 @@
+.row{
+	margin-top: 5px;
+}
+.container1{
+	padding-left: 100px;
+}
+.container-equipe{
+	min-height: 250px;
+	margin: 5px;	
+	background-color: white;
+	border-radius: 4px;
+}
+
+.container-pessoas{
+	background-color: white;
+	min-height: 300px;
+	margin: 5px;
+	border-radius: 4px;
+}
+.pessoa{
+	width:90px;
+	height: 90px;
+	background-color: rgb(204, 255, 144);
+	padding: 2px;
+	border-radius: 4px;
+	display:inline-block;
+	margin: 5px;
+}
+.pessoa > img{
+	position: relative;
+	left: 7px;
+	width: 80%;
+	height: 80%;
+	user-drag: none;
+}
+.pessoa > span {	
+	display: block;
+	width: 90%;
+	text-align: center;
+}
+
+.avatar-area{
+	position: relative;
+	clear: both;
+	width:90px;
+	height: 90px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.avatar-area > label{
+  background: rgb(204, 255, 144) no-repeat center center;
+  background-size: contain;
+  bottom: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  left: 0px;
+  position: absolute;
+  right: 1px;
+  text-indent: 100%;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.avatar-area input:focus + label {
+  outline: 2px dotted #21b4d0;
+}
+
+.avatar-area input:checked + label {
+  outline: 4px solid #21b4d0;
+}
+
+.botao-add-pessoa{
+	position: relative; 
+	display: inline-block;
+	top: 5px;
+}

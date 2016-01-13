@@ -1,0 +1,73 @@
+<meta charset="utf-8" />
+<div class="modal fade" id="createProjeto" tabindex="-1" role="dialog"
+	aria-labelledby="createItemLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Novo projeto</h4>
+			</div>
+			<div class="modal-body">
+				<form class="container-fluid">
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Titulo: </label>
+						</div>
+						<input type="text" ng-model="projeto.titulo" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Data inicio: </label>
+						</div>
+						<input type="text" ng-model="projeto.dataInicio" />
+
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Data fim: </label>
+						</div>
+						<input type="text" ng-model="projeto.dataFim" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Quantidade de horas: </label>
+						</div>
+						<input type="text" ng-model="projeto.quantidadeHoras" />
+					</div>
+					<div class="row ">
+						<div class="col-lg-2">
+							<label>Cliente: </label>
+						</div>
+						<input type="text" ng-model="projeto.cliente" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Responsável </label>
+						</div>
+						<input type="text" ng-model="projeto.responsavel" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Quatidade de Sprints: </label>
+						</div>
+						<input type="text" ng-model="projeto.quantidadeSprints" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Tamanho das Sprints: </label>
+						</div>
+						<input type="text" ng-model="projeto.tamanhoSprints" />
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary"
+					ng-click="salvar(projeto)">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

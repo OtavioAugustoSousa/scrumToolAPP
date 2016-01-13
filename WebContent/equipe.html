@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<!-- <html data-ng-app="app" manifest="/scrumtool/manifest.appcache"> -->
+<head>
+<title>SCRUMTool</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="/scrumtool/resources/js/libs/angular-ui/angular-ui.css"
+	rel="stylesheet" type="text/css" />
+
+<link
+	href="/scrumtool/resources/css/bootstrap-3.3.5-dist/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="/scrumtool/resources/css/estoriaStyle.css" rel="stylesheet"
+	type="text/css" />
+<link href="/scrumtool/resources/css/equipe.css" rel="stylesheet"
+	type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Oswald"
+	rel='stylesheet' type='text/css' />
+<link href="https://fonts.googleapis.com/css?family=Roboto"
+	rel="stylesheet" type="text/css" />
+
+<script src="/scrumtool/resources/js/libs/jquery-2.1.4.min.js"></script>
+<script src="/scrumtool/resources/js/libs/bootstrap.min.js"></script>
+<script src="/scrumtool/resources/js/libs/angular.js/angular.min.js"></script>
+<script
+	src="/scrumtool/resources/js/DataManager/Repository/projetoRepository.js"></script>
+<script
+	src="/scrumtool/resources/js/DataManager/Repository/backlogRepository.js"></script>
+<script src="/scrumtool/resources/js/AppManager/scrumtool.js"></script>
+<script src="/scrumtool/resources/js/AppManager/equipeController.js"></script>
+<script
+	src="/scrumtool/resources/js/DataManager/Repository/equipeRepository.js"></script>
+</head>
+<body data-ng-controller="equipeController">
+	<ng-include src="'/scrumtool/resources/partials/header.html'"></ng-include>
+	<div class="row">
+		<div class="container1 col-lg-6">
+			<div class="container-equipe col-lg-5" dropzone="move"
+				id="productOwner" ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<h3>Product owners</h3>
+				<div class="pessoa" draggable="true" ng-repeat="pessoa in pessoas | filter:{papel: 'PRODUCTOWNER'}"
+					ondragstart="angular.element(this).scope().drag(event)" id="{{pessoa.id}}">
+					<img alt="avatar" src='/scrumtool/{{pessoa.avatar}}'
+						draggable="false" /> <span>{{pessoa.nome}}</span>
+				</div>
+			</div>
+			<div class="container-equipe col-lg-5" dropzone="move"
+				id="stakeholders" ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<h3>Stakeholders</h3>
+				<div class="pessoa" draggable="true" ng-repeat="pessoa in pessoas | filter:{papel: 'STAKEHOLDER'}"
+					ondragstart="angular.element(this).scope().drag(event)" id="{{pessoa.id}}">
+					<img alt="avatar" src='/scrumtool/{{pessoa.avatar}}'
+						draggable="false" /> <span>{{pessoa.nome}}</span>
+				</div>
+			</div>
+			<div class="container-equipe col-lg-10" dropzone="move"
+				id="equipe" ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+				<h3>Equipe</h3>
+				<div class="pessoa" draggable="true" ng-repeat="pessoa in pessoas | filter:{papel: 'EQUIPE'}"
+					ondragstart="angular.element(this).scope().drag(event)" id="{{pessoa.id}}">
+					<img alt="avatar" src='/scrumtool/{{pessoa.avatar}}'
+						draggable="false" /> <span>{{pessoa.nome}}</span>
+				</div>
+				
+			</div>
+		</div>
+		<div class="container-pessoas col-lg-4" dropzone="move"
+				id="pessoas" ondrop="angular.element(this).scope().drop(event)"
+				ondragover="angular.element(this).scope().allowDrop(event)">
+			<button class="botao-add-pessoa btn btn-default" ng-click="createPessoa()">Adcicionar novo membro</button>
+			<h3>Pessoas</h3>
+			<div class="pessoa" draggable="true" ng-repeat="pessoa in pessoas | filter:{papel: 'PESSOAS'}"
+				ondragstart="angular.element(this).scope().drag(event)" id="{{pessoa.id}}">
+				<img alt="avatar" src='/scrumtool/{{pessoa.avatar}}'
+						draggable="false" /> <span>{{pessoa.nome}}</span>
+			</div>
+		</div>
+	</div>
+	<ng-include src="'/scrumtool/resources/partials/formCreatePessoa.html'"></ng-include>
+	<ng-include src="'/scrumtool/resources/partials/footer.html'"></ng-include>
+</body>
+</html>

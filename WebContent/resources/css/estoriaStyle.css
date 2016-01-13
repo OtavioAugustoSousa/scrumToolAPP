@@ -1,0 +1,216 @@
+html{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+   
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #EBEBEB;
+    font-size: 13px;
+}
+header{
+    position: relative;
+    width: 100%;
+    background-color: rgb(128, 216, 255);
+    font-family: 'Oswald', sans-serif !important;
+    margin: 0;
+    color: #FFFFFF;
+    overflow: hidden;
+    margin-top: 0px;
+    position: relative;
+}
+hgroup{
+    padding-left: 100px;
+
+}
+header > hgroup > h1 , h2{
+    display: inline-block;
+    font-size: 20pt;
+}
+.navbar{
+    background-color: rgb(128, 216, 255);
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-nav{
+    margin: 0px;
+
+}
+.navbar a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+    color: white;
+}
+ .navbar-nav > li > a:hover,
+ .navbar-nav > li > a:focus {
+    background-color:  #3BAFDA;
+}
+
+.estoria{
+    display: inline-block;
+    width: 49%;
+    height: 210px;
+    overflow: hidden;
+    margin-bottom:10px;
+
+}
+.estoria-head{
+    width: 100%;
+    padding: 5px 15px 5px 15px;
+    max-height: 50px;
+}
+.estoria-head > p{
+    box-sizing: border-box;
+    margin: 0px;
+    position: relative;
+
+}
+.estoria-head > h4{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    bottom: 9px;
+}
+.todo > .estoria-head {
+    background-color: #F86A5F;
+}
+.doing > .estoria-head {
+    background-color: rgba(255, 174, 10, 0.57);
+}
+.done > .estoria-head {
+    background-color: #A2DB64;
+}
+.estoria-body{
+    padding: 10px 15px;
+    overflow: hidden;
+}
+.estoria-body > p{
+    margin: 0px;
+}
+.item-titulo{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.item-menu{
+    display: inline-block;
+    float: right;
+}
+.projeto{
+    box-sizing: border-box;
+    padding-top: 15px;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    height: 50px;
+    background: #EBEBE7;
+    color: #999;
+    border-bottom: #999 solid 1px;
+}
+.projeto > p{
+    color: #4B4444;
+}
+.membro{
+    box-sizing: border-box;
+    position: relative;
+    height: 60px;
+    background: #fff59d;
+    border-bottom: #999 solid 1px;
+}
+.membro > p{
+     display: inline-block;
+     left: 20px;
+     font-size: 18px;
+     padding-top: 15px;
+     position: relative;
+}
+.membro > img{
+    position: relative;
+    top: -7px;
+    height: 40px;
+    width: 40px;
+}
+footer{
+    position: relative;
+    bottom: 0px;
+    height: 40px;
+    text-align: center;
+    width: 100%;
+    background: rgb(128, 216, 255);
+    padding-top: 10px;
+    color:white;
+}
+footer .h6{
+margin: 0px;
+}
+
+.title{
+    height: 30px;
+    position: relative;
+    padding-top: 4px;
+}
+.title > span{
+    display: inline-block;
+    float: right;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+.todo{
+     background-color: rgb(254, 172, 165);
+     margin-left: 4px;
+}
+.doing{
+     background-color: rgb(255, 255, 141);
+    margin-left: 4px;
+}
+.done{
+    background-color: rgb(204, 255, 144);
+    margin-left: 4px;
+}
+
+.content{
+    min-height: 524px;
+    max-width: 100%;
+    margin-left: 0px;
+    color: rgba(0,0,0,0.6);
+    font-family: 'Roboto', sans-serif;
+}
+.content dd{
+    font-size: 10pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.content dl{
+    font-size: 10pt;
+    margin-bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+.content dt {
+    float: left;
+    clear: left;
+    width: 50px;
+}
+.projetos{
+    margin-top: 20px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+.dropzone{
+    min-height: 260px;
+}
+.item-id{
+	width: 50%;
+}

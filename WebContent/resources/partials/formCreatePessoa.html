@@ -1,0 +1,48 @@
+<meta charset="utf-8" />
+<div class="modal fade" id="createPessoa" tabindex="-1" role="dialog"
+	aria-labelledby="createItemLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Nova Membro</h4>
+			</div>
+			<div class="modal-body">
+				<form class="container-fluid">
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Nome: </label>
+						</div>
+						<input type="text" ng-model="pessoa.nome" />
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Email: </label>
+						</div>
+						<input type="text" ng-model="pessoa.email" />
+
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label>Avatar: </label>
+						</div>
+						
+						<div ng-repeat="n in [1,2,3,4]" class="avatar-area">
+							<input type="radio" name="avatar" ng-model="$parent.pessoa.avatar" id="avata{{n}}" value="resources/imagens/user{{n}}.png"/>
+							<label for="avata{{n}}" style="background-image: url(resources/imagens/user{{n}}.png)">avatar{{n}}</label>
+							<!-- <img alt="user{{n}}" src="resources/imagens/user{{n}}.png" > -->
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary"
+					ng-click="salvar(pessoa)">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
